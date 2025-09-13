@@ -1,11 +1,12 @@
+import java.util.Scanner;
+
 public class Menu {
     String nom;
     Hiragana hira = new Hiragana();
     Katakana kata = new Katakana();
 
-
+    Scanner scanner = new Scanner(System.in);
     public Menu(){
-        Scanner scanner = new Scanner (System.in);
         System.out.println("Entrez votre pseudo : ");
         String nom = scanner.nextLine();
         this.nom=nom;
@@ -19,6 +20,7 @@ public class Menu {
         int choix;
         do{
             System.out.println("===JapL===");
+            System.out.println("Bienvenue " + this.nom);
             System.out.println("1.Afficher les Hiragana");
             System.out.println("2.Afficher les Katakana");
             System.out.println("3.Teste Hiragana (QCM)");
@@ -29,16 +31,16 @@ public class Menu {
             scanner.nextLine();
             switch(choix){
                 case 1 :
-                    hira.selectHiragana();
+                    hira.affichHiragana();
                     break;
                 case 2 :
-                    listerTaches();
+                    kata.affichKatakana();
                     break;
                 case 3 :
                     hira.selectHiragana();
                     break;
                 case 4 :
-                    kana.selectKatakana();
+                    kata.selectKatakana();
                     break;
                 case 5 :
                     System.out.println("Au revoir!");

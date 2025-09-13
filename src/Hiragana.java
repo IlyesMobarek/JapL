@@ -75,6 +75,15 @@ public class Hiragana {
         }
     }
 
+    public String affichHiragana(){
+        String phrase = "";
+        for(String k : hiragana.keySet()){
+            phrase += k + " - " + hiragana.get(k) + "\n";
+        }
+        System.out.println(phrase);
+        return phrase;
+    }
+
     public String selectHiragana() {
         clearConsole();
         String rep="";
@@ -91,8 +100,9 @@ public class Hiragana {
         if(hiragana.get(carac).equals(entree)){
             rep=" Vous avez bon !";
         }else{
-            rep="FAUX ! "+ carac + "correspond a :" + hiragana.get(carac);
+            rep="FAUX ! "+ carac + " correspond a : " + hiragana.get(carac);
         }
+        System.out.println(rep);
         return rep;
     }
 

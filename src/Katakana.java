@@ -1,10 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Katakana {
     private Map<String, String> katakana;
+    private Random rand = new Random();
     private List<String> kata = new ArrayList<>();
+
     public Katakana() {
         katakana = new HashMap<String, String>();
 
@@ -75,7 +75,24 @@ public class Katakana {
         }
     }
 
-    public String selectkatakana() {
+    public String afficheKatakana(){
+        String phrase = "";
+        for(String k : katakana.keySet()){
+            phrase += k + " - " + katakana.get(k) + "\n";
+        }
+        return phrase;
+    }
+
+    public String affichKatakana(){
+        String phrase = "";
+        for(String k : katakana.keySet()){
+            phrase += k + " - " + katakana.get(k) + "\n";
+        }
+        System.out.println(phrase);
+        return phrase;
+    }
+
+    public String selectKatakana() {
         clearConsole();
         String rep="";
         for(String k : katakana.keySet()){
@@ -91,8 +108,9 @@ public class Katakana {
         if(katakana.get(carac).equals(entree)){
             rep=" Vous avez bon !";
         }else{
-            rep="FAUX ! "+ carac + "correspond a :" + katakana.get(carac);
+            rep="FAUX ! "+ carac + " correspond a : " + katakana.get(carac);
         }
+        System.out.println(rep);
         return rep;
     }
 }
